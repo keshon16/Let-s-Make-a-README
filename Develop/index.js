@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 import inquirer from "inquirer";
 import fs from 'fs';
-import generateMarkdown from "./utils/generateMarkdown";
+import generateMarkdown from "./utils/generateMarkdown.js";
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -34,13 +34,24 @@ const questions = [
         type: 'input',
         name: 'usage',
         message: 'How to use this project?'
+    },
+    {
+       type: 'input',
+       name: 'email',
+       message: 'What is your email?'
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'What is your github username?'
+
     }
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, data);
-    console.log('Error writing file:', README.md, (err) =>
+    console.log('Error writing file:', 'README.md', (err) =>
         err ? console.log(err) : console.log('README.md has been created successfully!')
 );
 };
